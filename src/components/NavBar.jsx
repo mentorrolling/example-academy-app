@@ -12,10 +12,10 @@ const NavBar = () => {
                     <Nav className="mr-auto">
                         <Link to="/" className="nav-link">Home</Link>
                         <Link to="/cursos" className="nav-link">Cursos</Link>
-                        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                        <NavDropdown title="Buscar Curso" id="basic-nav-dropdown">
+                            <NavDropdown.Item href="#action/3.1">Maquetación con HTML 5</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.2">Estilos con CSS3 </NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.3">Fundamentos de Javascript</NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                         </NavDropdown>
