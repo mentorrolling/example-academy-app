@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const CursosItem = ({ curso }) => {
   return (
     <>
-      <Link to={`/curso/${curso.id}`}>
+      <Link to={`/curso/${curso.id}`} className="text-decoration-none">
         <div className="col-3">
           <div className="card">
             <img
