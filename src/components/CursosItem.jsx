@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const CursosItem = ({ curso }) => {
   return (
     <>
-      <Link to={`/curso/${curso.id}`} className="text-decoration-none">
+      <Link to={`/curso/${curso._id}`} className="text-decoration-none">
         <div className="col-3">
           <div className="card">
             <img
@@ -15,7 +15,7 @@ const CursosItem = ({ curso }) => {
             <div className="card-body">
               <h5 className="card-title">{curso.title}</h5>
               <img
-                className="avatar"
+                className="avatar mr-3"
                 src={curso.img_mentor}
                 alt={curso.mentor}
               />

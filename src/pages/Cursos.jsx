@@ -7,27 +7,33 @@ import "../css/cursos.css";
 
 const Cursos = () => {
   const [cursos, setCursos] = useState({
-    data: [],
+    data: {},
     loading: true,
   });
 
   const [inputValue, setInputValue] = useState("");
-
+  let cursosFilter = [];
   //estado para manejar el formulario
 
   useEffect(() => {
-    getCursos().then((cursos) => {
+    getCursos().then((datos) => {
       setCursos({
-        data: cursos,
+        data: datos,
         loading: false,
       });
     });
   }, []);
 
   //Arreglo nuevo con el filtro
-  const cursosFilter = cursos.data.filter((curso) => {
-    return curso.title.toLowerCase().includes(inputValue.toLowerCase());
-  });
+  // const cursosFilter = cursos.data.filter((curso) => {
+  //   return curso.title.toLowerCase().includes(inputValue.toLowerCase());
+  // });
+  if (!cursos.loading) {
+    cursosFilter = cursos.data.cursos.filter((curso) => {
+      return curso.title.toLowerCase().includes(inputValue.toLowerCase());
+    });
+    // console.log(cursosFilter);
+  }
 
   return (
     <div className="background-curso">
@@ -42,11 +48,13 @@ const Cursos = () => {
           {/* CursoSearch */}
         </div>
 
-        <div className="row">
-          {cursosFilter.map((curso) => {
-            return <CursosItem key={curso.id} curso={curso} />;
-          })}
-        </div>
+        {!cursos.loading && (
+          <div className="row">
+            {cursosFilter.map((curso) => {
+              return <CursosItem key={curso._id} curso={curso} />;
+            })}
+          </div>
+        )}
       </div>
     </div>
   );
