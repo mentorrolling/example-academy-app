@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import jwt_decode from "jwt-decode"; //Paquete para decodificar el Token
+import AddCurso from "../components/AddCurso";
 
 const Admin = () => {
   const [state, setState] = useState({});
@@ -24,9 +25,12 @@ const Admin = () => {
 
           <div className="row">
             {state.role === "ADMIN_ROLE" ? (
-              <div className="col">
-                <h3>Bienvenido al ABM</h3>
-              </div>
+              <>
+                <div className="col">
+                  <h3>Bienvenido al ABM</h3>
+                </div>
+                <AddCurso />
+              </>
             ) : (
               <div className="col">
                 <div className="alert alert-info" role="alert">
