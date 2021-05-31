@@ -5,7 +5,7 @@ const CursosItem = ({ curso }) => {
   return (
     <>
       <Link to={`/curso/${curso._id}`} className="text-decoration-none">
-        <div className="col-3">
+        <div className="col-3 mb-3">
           <div className="card">
             <img
               src={curso.imagen}
