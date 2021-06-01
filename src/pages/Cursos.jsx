@@ -36,7 +36,7 @@ const Cursos = () => {
   }
 
   return (
-    <div>
+    <div className="background-curso">
       <div className="container">
         <div className="row">
           <div className="col text-center my-5 ">
