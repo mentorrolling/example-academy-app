@@ -13,11 +13,8 @@ const TableCursos = () => {
   const [curso, setCurso] = useState({});
   const [show, setShow] = useState(false);
 
-  const [pagina, setPagina] = useState(0);
-
   useEffect(() => {
     consultaCursos();
-    // console.log(cursos);
   }, []);
 
   const consultaCursos = (desde) => {
@@ -26,18 +23,7 @@ const TableCursos = () => {
         data: datos,
         loading: false,
       });
-
-      // console.log(datos);
     });
-  };
-
-  const cambiarPagina = () => {
-    let cantPag = Math.round(cursos.data.cantidad / 5);
-
-    if (cantPag >= 1) {
-      setPagina(cantPag + 5);
-    } else {
-    }
   };
 
   const handleClose = () => {
@@ -47,9 +33,8 @@ const TableCursos = () => {
   const handleShow = () => setShow(true);
 
   const modificaCurso = (id) => {
-    // console.log(id);
     id_curso = id;
-    // console.log(id_curso);
+
     getCursoId(id_curso).then((resp) => {
       console.log(resp);
       setCurso(resp);
@@ -71,14 +56,7 @@ const TableCursos = () => {
     <div>
       {!cursos.loading && (
         <>
-          <div className="col-12 mt-4">
-            {/* <button className="btn btn-outline-info" onClick={cambiarPagina}>
-              Anterior
-            </button> */}
-            {/* <button className="btn btn-outline-info" onClick={cambiarPagina}>
-              Siguiente
-            </button> */}
-          </div>
+          <div className="col-12 mt-4"></div>
           <Table striped bordered hover className="mt-2">
             <thead>
               <tr>
@@ -125,8 +103,6 @@ const TableCursos = () => {
             show={show}
             handleClose={handleClose}
             curso={curso.curso}
-            // alta={alta}
-            // id_curso={id_curso}
           />
         </>
       )}

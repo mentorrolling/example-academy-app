@@ -55,7 +55,6 @@ const NavBar = () => {
       let token_decode = jwt_decode(localStorage.getItem("token")); //Obteniendo los datos del payload
       setPayload(token_decode.usuario);
     }
-    // console.log(token.length);
   };
 
   return (

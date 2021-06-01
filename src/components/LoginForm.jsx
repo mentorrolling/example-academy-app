@@ -40,7 +40,6 @@ const LoginForm = () => {
     });
 
     postLogin(formValues).then((datos) => {
-      // console.log(datos.data);
       setUser(datos);
     });
     setFormValues({
@@ -79,7 +78,6 @@ const LoginForm = () => {
           disabled={user.loading}
         >
           Enviar
-          {/* {user.loading ? <SpinnerLoading /> : "Entrar"} */}
         </button>
       </form>
       {user.data.ok === false && (
@@ -87,11 +85,6 @@ const LoginForm = () => {
           {user.data.err.message}
         </div>
       )}
-      {/* {user.data.ok === true && (
-          <div className="alert alert-success mt-3 text-center" role="alert">
-            Usuario Correcto!
-          </div>
-        )} */}
     </>
   );
 };

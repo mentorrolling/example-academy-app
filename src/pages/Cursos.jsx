@@ -25,14 +25,11 @@ const Cursos = () => {
   }, []);
 
   //Arreglo nuevo con el filtro
-  // const cursosFilter = cursos.data.filter((curso) => {
-  //   return curso.title.toLowerCase().includes(inputValue.toLowerCase());
-  // });
+
   if (!cursos.loading) {
     cursosFilter = cursos.data.cursos.filter((curso) => {
       return curso.title.toLowerCase().includes(inputValue.toLowerCase());
     });
-    // console.log(cursosFilter);
   }
 
   return (
@@ -45,7 +42,6 @@ const Cursos = () => {
         </div>
         <div className="row mb-5">
           <CursoSearch inputValue={inputValue} setInputValue={setInputValue} />
-          {/* CursoSearch */}
         </div>
 
         {!cursos.loading && (

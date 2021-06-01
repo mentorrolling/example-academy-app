@@ -1,11 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import AddCursoForm from "./AddCursoForm";
-// import ModalCurso from "./ModalCurso";
-// import { addCurso } from "../helpers/rutaCursos";
 
 const AddCurso = ({ show, setShow }) => {
-  // const [show, setShow] = useState(false);
-
   const handleShow = () => {
     setShow(!show);
   };

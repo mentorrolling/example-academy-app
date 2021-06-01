@@ -10,7 +10,7 @@ const Admin = () => {
   useEffect(() => {
     if (token) {
       let token_decode = jwt_decode(token); //Obteniendo los datos del payload del token
-      // console.log(token_decode.usuario);
+
       setState(token_decode.usuario);
     }
   }, [token]);

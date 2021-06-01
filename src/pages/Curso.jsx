@@ -16,7 +16,6 @@ const Curso = () => {
   useEffect(() => {
     getCursoId(id).then((datos) => {
       setData(datos);
-      // console.log(data);
     });
   }, [id]);
 
