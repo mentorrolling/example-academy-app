@@ -42,7 +42,7 @@ export const getCursoId = async (id) => {
   try {
     const resp = await axios(url, options);
     const { data } = resp;
-    // console.log(data);
+    console.log(data);
     return data;
   } catch (error) {
     // console.log(error.response.data);
@@ -65,6 +65,59 @@ export const addCurso = async (datos) => {
       token: token,
     },
     data: qs.stringify(datos),
+  };
+  try {
+    const resp = await axios(url, options);
+    const { data } = resp;
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error.response.data);
+    return {
+      data: error.response.data,
+      loading: false,
+    };
+  }
+};
+
+export const modifCurso = async (datos, id) => {
+  console.log(datos);
+  const token = JSON.parse(localStorage.getItem("token")) || "";
+  let url = `http://localhost:3004/cursos/${id}`;
+
+  const options = {
+    method: "PUT",
+    headers: {
+      "content-type": "application/x-www-form-urlencoded",
+      token: token,
+    },
+    data: qs.stringify(datos),
+  };
+  try {
+    const resp = await axios(url, options);
+    const { data } = resp;
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error.response.data);
+    return {
+      data: error.response.data,
+      loading: false,
+    };
+  }
+};
+
+export const delCurso = async (id) => {
+  const token = JSON.parse(localStorage.getItem("token")) || "";
+  let url = `http://localhost:3004/cursos/${id}`;
+
+  const options = {
+    method: "DELETE",
+    headers: {
+      "content-type": "application/x-www-form-urlencoded",
+      token: token,
+    },
+    // data: qs.stringify(datos),
   };
   try {
     const resp = await axios(url, options);

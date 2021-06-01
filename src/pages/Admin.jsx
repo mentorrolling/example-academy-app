@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import jwt_decode from "jwt-decode"; //Paquete para decodificar el Token
 import AddCurso from "../components/AddCurso";
+import TableCursos from "../components/TableCursos";
 
 const Admin = () => {
   const [state, setState] = useState({});
+  const [show, setShow] = useState(false);
   const token = JSON.parse(localStorage.getItem("token"));
   useEffect(() => {
     if (token) {
@@ -12,6 +14,7 @@ const Admin = () => {
       setState(token_decode.usuario);
     }
   }, [token]);
+
   return (
     <>
       {token.length > 0 ? (
@@ -29,7 +32,9 @@ const Admin = () => {
                 <div className="col">
                   <h3>Bienvenido al ABM</h3>
                 </div>
-                <AddCurso />
+                <AddCurso setShow={setShow} show={show} />
+
+                {show === false && <TableCursos />}
               </>
             ) : (
               <div className="col">
