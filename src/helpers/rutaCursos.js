@@ -48,7 +48,7 @@ export const getCursoId = async (id) => {
 
 //Crear nuevo curso
 export const addCurso = async (datos) => {
-  console.log(datos);
+  // console.log(datos);
   const token = JSON.parse(localStorage.getItem("token")) || "";
   let url = "http://localhost:3004/cursos";
 
@@ -63,10 +63,10 @@ export const addCurso = async (datos) => {
   try {
     const resp = await axios(url, options);
     const { data } = resp;
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
-    console.log(error.response.data);
+    // console.log(error.response.data);
     return {
       data: error.response.data,
       loading: false,
@@ -76,7 +76,7 @@ export const addCurso = async (datos) => {
 
 //Actualizar curso
 export const modifCurso = async (datos, id) => {
-  console.log(datos);
+  // console.log(datos);
   const token = JSON.parse(localStorage.getItem("token")) || "";
   let url = `http://localhost:3004/cursos/${id}`;
 
@@ -117,10 +117,10 @@ export const delCurso = async (id) => {
   try {
     const resp = await axios(url, options);
     const { data } = resp;
-    console.log(data);
+    // console.log(data);
     return data;
   } catch (error) {
-    console.log(error.response.data);
+    // console.log(error.response.data);
     return {
       data: error.response.data,
       loading: false,

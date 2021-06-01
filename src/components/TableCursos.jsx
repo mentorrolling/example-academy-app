@@ -5,6 +5,7 @@ import { Table } from "react-bootstrap";
 
 const TableCursos = () => {
   let id_curso = "";
+
   const [cursos, setCursos] = useState({
     data: {},
     loading: true,

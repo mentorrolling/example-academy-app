@@ -24,18 +24,18 @@ const AddCursoForm = ({ setShow }) => {
     e.preventDefault();
     addCurso(formValues).then((resp) => {
       console.log(resp);
-    });
 
-    setFormValues({
-      title: "",
-      imagen: "",
-      detalle: "",
-      video: "",
-      mentor: "",
-      img_mentor: "",
-    });
+      setFormValues({
+        title: "",
+        imagen: "",
+        detalle: "",
+        video: "",
+        mentor: "",
+        img_mentor: "",
+      });
 
-    setShow(false);
+      setShow(false);
+    });
   };
 
   return (
