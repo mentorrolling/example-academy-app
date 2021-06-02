@@ -23,7 +23,7 @@ const AddCursoForm = ({ setShow }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addCurso(formValues).then((resp) => {
-      console.log(resp);
+      // console.log(resp);
 
       setFormValues({
         title: "",

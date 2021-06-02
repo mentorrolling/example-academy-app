@@ -25,19 +25,29 @@ const NavBar = () => {
   //Si cambia la locación asigno a user el valor de localstorage
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem("usuario")) || "Iniciar Sesión");
-
+    ActualizarData();
     checkToken();
   }, [location]);
 
   //Cuando monto navbar se cargan los cursos
   useEffect(() => {
+    ActualizarData();
+    // getCursos().then((datos) => {
+    //   setCursos({
+    //     data: datos,
+    //     loading: false,
+    //   });
+    // });
+  }, []);
+
+  const ActualizarData = () => {
     getCursos().then((datos) => {
       setCursos({
         data: datos,
         loading: false,
       });
     });
-  }, []);
+  };
 
   //Manejo el deslogueo de la web
   const handleLogin = () => {
@@ -73,7 +83,11 @@ const NavBar = () => {
               Cursos
             </Link>
             {!cursos.loading && (
-              <NavDropdown title="Buscar Curso" id="basic-nav-dropdown">
+              <NavDropdown
+                title="Buscar Curso"
+                id="basic-nav-dropdown"
+                onClick={ActualizarData}
+              >
                 {cursos.data.cursos.map((curso) => (
                   <NavDropdown.Item key={curso._id}>
                     <Link to={`/curso/${curso._id}`} className="dropdown-item">

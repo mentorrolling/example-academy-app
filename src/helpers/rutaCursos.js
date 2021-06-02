@@ -63,7 +63,7 @@ export const addCurso = async (datos) => {
   try {
     const resp = await axios(url, options);
     const { data } = resp;
-    // console.log(data);
+    console.log(resp);
     return data;
   } catch (error) {
     // console.log(error.response.data);
