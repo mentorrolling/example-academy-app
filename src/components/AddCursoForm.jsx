@@ -5,11 +5,13 @@ const AddCursoForm = ({ setShow }) => {
   const id = JSON.parse(localStorage.getItem("id"));
   const [formValues, setFormValues] = useState({
     title: "",
-    imagen: "",
+    imagen:
+      "https://i0.wp.com/elfutbolito.mx/wp-content/uploads/2019/04/image-not-found.png?ssl=1",
     detalle: "",
-    video: "",
+    video: "https://www.youtube.com/embed/iUrFW4JTv3c",
     mentor: "",
-    img_mentor: "",
+    img_mentor:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx_7XSeoV5uoxiFIbSEg9QT-YT7TFqgvuxag&usqp=CAU",
     usuario: id,
   });
 
@@ -23,15 +25,14 @@ const AddCursoForm = ({ setShow }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addCurso(formValues).then((resp) => {
-      // console.log(resp);
+      console.log(resp);
 
       setFormValues({
         title: "",
-        imagen: "",
+
         detalle: "",
-        video: "",
+
         mentor: "",
-        img_mentor: "",
       });
 
       setShow(false);
