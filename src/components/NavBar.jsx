@@ -41,7 +41,7 @@ const NavBar = () => {
   }, []);
 
   const ActualizarData = () => {
-    getCursos().then((datos) => {
+    getCursos(0, 100).then((datos) => {
       setCursos({
         data: datos,
         loading: false,

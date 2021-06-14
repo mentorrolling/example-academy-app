@@ -19,7 +19,7 @@ const TableCursos = () => {
   }, []);
 
   const consultaCursos = (desde) => {
-    getCursos(desde).then((datos) => {
+    getCursos(desde, 20).then((datos) => {
       setCursos({
         data: datos,
         loading: false,
